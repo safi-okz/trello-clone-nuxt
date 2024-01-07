@@ -7,5 +7,9 @@ export default defineNuxtConfig({
 
   nuxtServerUtils: {
             mongodbUri: process.env.MONGODB_URI
-  }
+  },
+
+  serverMiddleware: [
+    { path: '/api', handler: '~/api/signup.ts' },
+  ],
 })

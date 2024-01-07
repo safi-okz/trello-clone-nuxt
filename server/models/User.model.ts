@@ -13,24 +13,26 @@ export interface userDocument extends Document {
 const userSchema = new Schema({
     name: {
         type: String,
-        required: true
+        // required: true
     },
     email: {
         type: String,
-        required: true,
+        // required: true,
         trim: true,
         unique: true
     },
     password: {
         type: String,
-        required: true,
+        // required: true,
         select: false
     },
     stripeCustomerId:  {
         type: String,
         default: null
     },
-    timestamps: true
+    timestamps: {
+        type: String
+    }
 });
 
 userSchema.pre('save', async function(next) {
