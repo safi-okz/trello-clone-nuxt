@@ -1,4 +1,4 @@
-import { Validator } from "nuxt-server-utils";
+import { Validator } from "#nuxt-server-utils";
 import SignupSchema from "../../../schemas/Signup.schema";
 import { user } from '../../models/User.model';
 
