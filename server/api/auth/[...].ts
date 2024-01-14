@@ -10,6 +10,10 @@ async function getUser(id: string) {
 
 export default NuxtAuthHandler({
   secret: useRuntimeConfig().auth.secret,
+
+  pages: {
+      signIn: '/auth/signin'
+  },
  
   providers: [
     // @ts-expect-error
@@ -19,17 +23,17 @@ export default NuxtAuthHandler({
       async authorize(credential: { email: string; password: string }) {
         // Authorize the user
 
-        const User = await user.findOne({ email: credential.email });
+        const User = await user.findOne({ email: credential.email }).select("+password");
 
         if (!User) {
           return null;
         }
 
-        const isValid = await User.comparePassword(credential.password);
-
+        const isValid = await user.findOne({password: credential.password});
+        console.log('auth ', isValid);
         if (!isValid) {
           return null;
-        }
+        }  
 
         return User.toJSON();
       },
