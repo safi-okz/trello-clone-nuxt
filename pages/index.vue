@@ -6,6 +6,6 @@ definePageMeta({
 
 <template>
     <div>
-        Index file
+        <WrapperDefault />
     </div>
 </template>
