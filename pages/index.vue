@@ -2,10 +2,14 @@
 definePageMeta({
     middleware: "auth"
 });
+
+const {data} = await useFetch('/api/boards');
+ 
 </script>
 
 <template>
-    <div>
-        <WrapperDefault />
-    </div>
+    <WrapperDefault>
+        {{ data }}
+        <p>Frist name</p>
+    </WrapperDefault>
 </template>

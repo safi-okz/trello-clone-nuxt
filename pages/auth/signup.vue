@@ -22,7 +22,7 @@ async function handleSignup (event: FormSubmitEvent<z.output<typeof SignupSchema
         });
 
         console.log('response ', res);
-        useRouter().push('/aut/signin');
+        useRouter().push('/auth/signin');
         useToast().add({
             title: 'Account created',
             description: 'Your account create successfully and redirect you to SignIn page',

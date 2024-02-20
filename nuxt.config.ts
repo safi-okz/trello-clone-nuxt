@@ -17,9 +17,10 @@ export default defineNuxtConfig({
             mongodbUri: process.env.MONGODB_URI
   },
 
-  serverMiddleware: [
-    { path: '/api', handler: '~/api/signup.ts' },
-  ],
+  // serverMiddleware: [
+  //   // { path: '/api', handler: '~/api/signup.ts' },
+  //   // {path: '/api', handler: '~/api/boards/index.get.ts'}
+  // ],
 
    auth: {
     baseURL: process.env.AUTH_ORIGIN,
